@@ -1,16 +1,22 @@
 let rand = 0
-if (localStorage.getItem('rand') === null){
-  localStorage.setItem('rand', 0)
-} else {
-  rand = localStorage.getItem('rand')
-  document.getElementById("rando").innerHTML = rand.toString()
-}
+window.addEventListener('load', function () {
+  if (window.localStorage.getItem('rand') === null){
+    window.localStorage.setItem('rand', 0)
+    console.log(window.localStorage.getItem('rand'))
+  } else {
+    console.log(window.localStorage.getItem('rand'))
+    rand = window.localStorage.getItem('rand')
+    console.log("e")
+    console.log(rand.toString())
+    document.getElementById("rando").innerHTML = rand.toString()
+  }
+})
 
 
 function runrand(){
   rand = randInt(1,100)
   document.getElementById("rando").innerHTML = rand.toString()
-  localStorage.setItem('rand',rand)
+  window.localStorage.setItem('rand',rand)
 }
 
 
